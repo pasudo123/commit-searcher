@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component
 class ContributionParser {
 
     fun parseToMyContribution(html: String): MyContribution {
-        Jsoup.parse(html)
+        val document = Jsoup.parse(html)
+
 
         return MyContribution()
     }

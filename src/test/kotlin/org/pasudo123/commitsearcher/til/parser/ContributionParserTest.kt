@@ -36,7 +36,7 @@ internal class ContributionParserTest {
      */
     companion object {
         @JvmStatic
-        fun provideHtml(): Stream<Arguments> {
+        private fun provideHtml(): Stream<Arguments> {
             return Stream.of(
                 Arguments.of(
                     "<g transform=\"translate(10, 20)\" data-hydro-click=\"{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:17797352,&quot;target&quot;:&quot;CONTRIBUTION_CALENDAR_SQUARE&quot;,&quot;user_id&quot;:null,&quot;originating_url&quot;:&quot;https://github.com/users/pasudo123/contributions?to=2021-12-31&quot;}}\" data-hydro-click-hmac=\"caaf33b72b58f2440472af530aec1ab0c049fba68e88341b5c9206952df08be8\"> \n" +
