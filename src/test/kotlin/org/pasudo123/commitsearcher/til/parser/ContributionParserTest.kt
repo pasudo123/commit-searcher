@@ -28,7 +28,6 @@ internal class ContributionParserTest {
         val myContribution = contributionParser.parseToMyContribution(html)
 
         // then
-//        assertThat(myContribution)
     }
 
     /**
