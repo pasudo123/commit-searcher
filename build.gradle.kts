@@ -1,5 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+/**
+ * https://docs.gradle.org/current/userguide/kotlin_dsl.html#kotdsl:accessor_applicability
+ */
 plugins {
     id("org.springframework.boot") version "2.3.8.RELEASE"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
@@ -36,6 +39,10 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.72")
     testImplementation("io.projectreactor:reactor-test")
+
+    testImplementation("io.kotest:kotest-runner-junit5:4.3.1")      // for kotest framework
+    testImplementation("io.kotest:kotest-assertions-core:4.3.1")    // for kotest core jvm assertions
+    testImplementation("io.kotest:kotest-property:4.3.1")           // for kotest property test
 }
 
 tasks.withType<KotlinCompile> {

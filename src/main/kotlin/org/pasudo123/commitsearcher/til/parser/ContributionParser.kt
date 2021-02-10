@@ -18,6 +18,7 @@ class ContributionParser {
     fun parseToMyContribution(html: String): MyContribution {
         val document = Jsoup.parse(html)
         val elements = document.getElementsByClass(RECT_ELEMENT)
+
         val myContributionElements = elements.map {
             MyContribution.myElementCreate(
                 it.attr(COMMIT_COUNT).toInt(),

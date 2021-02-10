@@ -1,5 +1,6 @@
 package org.pasudo123.commitsearcher.til.parser
 
+import io.kotest.matchers.shouldNotBe
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -9,7 +10,7 @@ import java.util.stream.Stream
 /**
  * 아래의 링크는 코틀린에서 MethodSource 사용하는 방법을 알려주고 있다.
  * https://blog.oio.de/2018/11/13/how-to-use-junit-5-methodsource-parameterized-tests-with-kotlin/
- *
+ * https://phauer.com/2018/best-practices-unit-testing-kotlin/
  */
 @DisplayName("컨트리뷰션 파서는")
 internal class ContributionParserTest {
@@ -28,6 +29,7 @@ internal class ContributionParserTest {
         val myContribution = contributionParser.parseToMyContribution(html)
 
         // then
+        myContribution shouldNotBe null
     }
 
     /**
