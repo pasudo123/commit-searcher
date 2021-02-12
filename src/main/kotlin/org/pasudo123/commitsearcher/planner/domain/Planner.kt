@@ -19,7 +19,7 @@ import javax.persistence.Table
 @Table(name = "planner")
 @EntityListeners(AuditingEntityListener::class)
 data class Planner(
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     var title: String = "",
 
     @Column(name = "description")
@@ -29,15 +29,25 @@ data class Planner(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
+        private set
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "planner")
     var issueTickets: List<IssueTicket> = mutableListOf()
+        private set
 
+    @Column(name = "created_date", columnDefinition = "datetime", nullable = false)
     @CreatedDate
     var createdDate: LocalDateTime = LocalDateTime.MIN
         private set
 
+    @Column(name = "updated_date", columnDefinition = "datetime", nullable = false)
     @LastModifiedDate
     var updatedDate: LocalDateTime = LocalDateTime.MIN
         private set
+
+    fun addIssueTicket(issueTicket: IssueTicket) {
+        this.issueTickets
+            .toMutableList()
+            .add(issueTicket)
+    }
 }
