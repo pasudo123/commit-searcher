@@ -34,6 +34,10 @@ dependencies {
     // jsoup HTML parser library @ https://jsoup.org/
     implementation("org.jsoup:jsoup:1.13.1")
 
+    // jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("mysql:mysql-connector-java")
+
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-freemarker")
     implementation("org.springframework.boot:spring-boot-starter-mustache")
