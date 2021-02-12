@@ -12,8 +12,9 @@ class TilService(
 ) {
 
     fun findTilByUsername(username: String): ContributionResponseDto {
-        contributionCrawler.getContributionHtmlByUser(username)
+        val html = contributionCrawler.getContributionHtmlByUser(username)
+        val myContribution = contributionParser.parseToMyContribution(html)
 
-        return ContributionResponseDto()
+        return ContributionResponseDto(myContribution = myContribution, html = html)
     }
 }

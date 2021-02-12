@@ -2,7 +2,6 @@ package org.pasudo123.commitsearcher.til.controller
 
 import org.pasudo123.commitsearcher.til.dto.ContributionResponseDto
 import org.pasudo123.commitsearcher.til.service.TilService
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
  */
 @RestController
 class TilController(
-    @Autowired private val tilService: TilService
+    private val tilService: TilService
 ) {
 
     @GetMapping("til/{username}")

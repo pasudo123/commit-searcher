@@ -1,21 +1,19 @@
 package org.pasudo123.commitsearcher.til.pojo
 
+import java.lang.reflect.Array.get
 import java.time.LocalDate
 
-class MyContribution constructor(
+data class MyContribution constructor(
     private val myElements: List<MyElement> = emptyList()
 ) {
 
     // 최대 커밋 카운트 및 날짜
-    private var maxCommitCount = -1
-    private var maxCommitDate: LocalDate? = null
+    var maxCommitCount = -1
+    var maxCommitDate: LocalDate? = null
 
     // 최소 커밋 카운트 및 날짜
-    private var minCommitCount = 1
-    private var minCommitDate: LocalDate? = null
-
-    // 나의 커밋 상태 메시지
-    private var message = ""
+    var minCommitCount = 1
+    var minCommitDate: LocalDate? = null
 
     data class MyElement constructor(
         val commitCount: Int = 0,
@@ -23,7 +21,7 @@ class MyContribution constructor(
     )
 
     companion object {
-        private const val ZERO = 0L
+        val EMPTY = MyContribution()
         private const val ONE = 1L
 
         fun myElementCreate(commitCount: Int, commitDate: LocalDate): MyElement {
