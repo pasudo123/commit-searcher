@@ -9,4 +9,4 @@ spring:
     open-in-view: false
     database-platform: org.hibernate.dialect.MySQL57Dialect
     show-sql: true
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: create
