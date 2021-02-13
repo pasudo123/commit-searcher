@@ -81,6 +81,7 @@ internal class TilControllerTest {
         }.andExpect {
             status { isOk }
             content { contentType(MediaType.APPLICATION_JSON) }
+            content { json("{\"myContribution\":{}, \"html\":{}}") }
         }.andDo {
             print()
         }.andReturn()
