@@ -14,11 +14,4 @@ class PlannerCreateDto {
             return Planner(title  = title, description = description)
         }
     }
-
-    data class ResponseDto(
-        var title: String = "",
-        var description: String = "",
-        var createdDate: String = "",
-        var updateDate: String = ""
-    )
 }
