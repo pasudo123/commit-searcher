@@ -6,8 +6,7 @@ import javax.validation.constraints.NotBlank
 class PlannerCreateDto {
 
     data class RequestDto(
-        @NotBlank
-        private var title: String = "",
+        @NotBlank private var title: String = "",
         private var description: String = ""
     ) {
         fun toPlannerEntity(): Planner {

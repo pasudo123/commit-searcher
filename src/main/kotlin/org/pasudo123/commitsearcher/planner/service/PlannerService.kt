@@ -1,5 +1,6 @@
 package org.pasudo123.commitsearcher.planner.service
 
+import org.pasudo123.commitsearcher.exception.EntityNotFoundException
 import org.pasudo123.commitsearcher.planner.dto.PlannerCreateDto
 import org.pasudo123.commitsearcher.planner.dto.PlannerResponseDto
 import org.pasudo123.commitsearcher.planner.repository.PlannerRepository
@@ -27,6 +28,7 @@ class PlannerService(
 
     @Transactional(readOnly = true)
     fun findOneById(id: Long): PlannerResponseDto {
-        TODO("구현이 필요")
+        val planner =  plannerRepository.findByIdOrNull(id) ?: throw EntityNotFoundException("해당되는 id = $id planner 가 없습니다.")
+        return PlannerResponseDto(planner)
     }
 }
