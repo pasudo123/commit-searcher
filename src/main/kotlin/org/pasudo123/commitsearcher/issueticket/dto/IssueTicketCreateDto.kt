@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank
 class IssueTicketCreateDto {
 
     data class RequestDto(
-        @NotBlank private val plannerId: Long? = null,
+        @NotBlank var plannerId: Long = 1,
         @NotBlank private var title: String = "",
         private var description: String = ""
     ) {
