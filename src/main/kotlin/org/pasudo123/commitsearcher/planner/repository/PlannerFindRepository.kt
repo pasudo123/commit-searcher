@@ -1,5 +1,6 @@
 package org.pasudo123.commitsearcher.planner.repository
 
+import org.pasudo123.commitsearcher.exception.ErrorCode
 import org.pasudo123.commitsearcher.exception.EntityNotFoundException
 import org.pasudo123.commitsearcher.planner.domain.Planner
 import org.springframework.data.repository.findByIdOrNull
@@ -18,6 +19,6 @@ class PlannerFindRepository(
 
     fun findOneById(id: Long): Planner {
         return plannerRepository.findByIdOrNull(id)
-            ?: throw EntityNotFoundException("해당되는 id = $id planner 가 없습니다.")
+            ?: throw EntityNotFoundException(ErrorCode.E001, "해당되는 id = $id planner 가 없습니다.")
     }
 }
