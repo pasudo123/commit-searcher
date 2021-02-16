@@ -6,6 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
+    # osiv false
     open-in-view: false
     database-platform: org.hibernate.dialect.MySQL57Dialect
     show-sql: true

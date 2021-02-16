@@ -5,6 +5,7 @@ import org.pasudo123.commitsearcher.planner.domain.Planner
 import java.time.LocalDateTime
 
 data class PlannerResponseDto(
+    var id: Long = 0L,
     var title: String = "",
     var description: String = "",
 
@@ -15,6 +16,7 @@ data class PlannerResponseDto(
     var updateDate: LocalDateTime = LocalDateTime.now()
 ) {
     constructor(planner: Planner) : this(
+        id = planner.id!!,
         title = planner.title,
         description = planner.description,
         createdDate = planner.createdDate,

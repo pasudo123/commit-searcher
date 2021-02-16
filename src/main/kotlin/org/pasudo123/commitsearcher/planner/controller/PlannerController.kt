@@ -1,6 +1,7 @@
 package org.pasudo123.commitsearcher.planner.controller
 
 import org.pasudo123.commitsearcher.planner.dto.PlannerCreateDto
+import org.pasudo123.commitsearcher.planner.dto.PlannerDetailResponseDto
 import org.pasudo123.commitsearcher.planner.dto.PlannerResponseDto
 import org.pasudo123.commitsearcher.planner.service.PlannerService
 import org.springframework.http.ResponseEntity
@@ -28,7 +29,7 @@ class PlannerController(
     }
 
     @GetMapping("{id}")
-    fun findOneById(@PathVariable("id") id: Long): ResponseEntity<PlannerResponseDto> {
+    fun findOneById(@PathVariable("id") id: Long): ResponseEntity<PlannerDetailResponseDto> {
         return ResponseEntity.ok(plannerService.findOneById(id))
     }
 
