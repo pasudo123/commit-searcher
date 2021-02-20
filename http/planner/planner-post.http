@@ -1,0 +1,14 @@
+##################################
+#
+# local
+#
+##################################
+
+### 플래너를 생성한다.
+POST http://{{host}}/planners
+Content-Type: application/json
+
+{
+  "title": "이마트 가기",
+  "description": "이마트를 이번주 내에 가야한다."
+}

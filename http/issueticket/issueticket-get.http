@@ -1,0 +1,8 @@
+### 이슈티켓 목록을 조회한다.
+GET http://{{host}}/issue-tickets
+Accept: application/json
+
+### 하나의 이슈티켓을 조회한다.
+### GET http://{{host}}/issue-tickets/{{id}}
+GET http://{{host}}/issue-tickets/7
+Accept: application/json

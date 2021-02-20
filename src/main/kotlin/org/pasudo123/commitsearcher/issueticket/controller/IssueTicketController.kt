@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping(path = ["/issue-ticket"])
+@RequestMapping(path = ["/issue-tickets"])
 class IssueTicketController(
     private val issueTicketService: IssueTicketService
 ) {

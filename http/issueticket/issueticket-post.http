@@ -1,0 +1,11 @@
+### 이슈 티켓을 등록한다.
+POST http://{{host}}/issue-tickets
+Content-Type: application/json
+
+{
+  "plannerId": 1,
+  "title": "고구마 삶아 먹기",
+  "description": "호박고구마로 삶아먹어야 함"
+}
+
+###

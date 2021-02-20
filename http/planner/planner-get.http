@@ -1,0 +1,31 @@
+##################################
+#
+# local
+#
+##################################
+
+### 플래너 목록을 조회한다.
+GET http://{{host}}/planners
+Accept: application/json
+
+> {%
+client.log("=====================================")
+client.log("id : " + response.body[0].id)
+client.log("title : " + response.body[0].title)
+client.log("desc : " + response.body[0].description)
+client.log("=====================================")
+client.global.set("plannerId", response.body[0].id);
+%}
+
+### 하나의 플래너를 조회한다.
+GET http://{{host}}/planners/{{plannerId}}
+Accept: application/json
+
+> {%
+client.log("=====================================")
+client.log("id : " + response.body.plannerTickets[1].id)
+client.log("title : " + response.body.plannerTickets[1].title)
+client.log("desc : " + response.body.plannerTickets[1].description)
+client.log("=====================================")
+client.global.set("issueTicketId", response.body.plannerTickets[1].id);
+%}
