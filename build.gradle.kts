@@ -40,6 +40,10 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
+    // validation
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+    implementation("javax.validation:validation-api:2.0.1.Final")
+
     // 미사용 template
 //    implementation("org.springframework.boot:spring-boot-starter-freemarker")
 //    implementation("org.springframework.boot:spring-boot-starter-mustache")
