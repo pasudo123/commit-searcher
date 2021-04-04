@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
+    "target": "esnext", // 빌드될 자바스크립트의 버전
+    "module": "esnext", // 모듈은 어떤 것을 사용할 것인지
+    "strict": true,     // undefined 를 포함하지 않는 클래스 속성은 반드시 초기화되어야 한다.
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -27,14 +27,14 @@
       "scripthost"
     ]
   },
-  "include": [
+  "include": [ // 빌드시 포함할 파일
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
+  "exclude": [ // 빌드를 예외할 파일
     "node_modules"
-  ]
+  ],
 }
